@@ -24,6 +24,11 @@ void MeshMasher::run() {
 		return;
 	}
 
+	char input;
+	std::cout << "Pre Transform Vertices ? y/n : ";
+	std::cin >> input;
+	std::cout << "\n";
+
 	// init worker threads with thier func
 	std::unique_ptr<std::latch> latchThreads;
 	std::vector<std::jthread> threads;
@@ -44,14 +49,17 @@ void MeshMasher::run() {
 		Assimp::Importer importer;
 		
 		//TODO: set option to chose importer setting
-		//const auto scene = importer.ReadFile(("input/" + modelName).c_str(), aiProcessPreset_TargetRealtime_Quality | aiProcess_PreTransformVertices);
-		const auto scene = importer.ReadFile(("input/" + modelName).c_str(), aiProcessPreset_TargetRealtime_Quality);
+		int processPreset = aiProcessPreset_TargetRealtime_Quality;
+		if (input == 'y')
+			processPreset = aiProcessPreset_TargetRealtime_Quality | aiProcess_PreTransformVertices;
+
+		const auto scene = importer.ReadFile(("input/" + modelName).c_str(), processPreset);
 		if (scene != nullptr) {
 
 			//remove extension (.obj, gltf) from filename to get modelname
 			modelName = modelName.substr(0, modelName.find('.'));
 			modelBaseInstances[modelName] = currBaseInstance++;
-			std::cout << "\n--------\n" << modelName << std::endl;
+			std::cout << "--------\n" << modelName << std::endl;
 
 			// process materials first so that we can identify which meshes are of what type
 			materials[modelName].resize(scene->mNumMaterials);
