@@ -29,8 +29,8 @@ You can either launch the application with the default settings by directly clic
 # -wt = number of worker threads to be used for mesh data processing
 # -ptv = set assimp aiProcess_PreTransformVertices flag 
 # -mo = use meshoptimizer library on mesh data
-# example:
-MeshMasher.exe -wt 3 -ptv 1 -mo 1
+# default settings
+MeshMasher.exe -wt 2 -ptv 1 -mo 1
 ```
 ## Ouput generated
 MeshMasher writes different types of data into different files with the intention of letting the geometry loader that will map data into buffers able to do this with multiple threads asynchronously. \
