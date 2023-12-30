@@ -18,6 +18,8 @@ Transparent material based meshes are written at the end so they can be drawn la
 You can download the compiled executable and run the program immediately but if you do compile the program yourself, copy and paste the contents of the **bin_cpy** folder into the executable directory. \
 **contents.txt, input and output** folders  MUST be present with the executable.
 
+[MMViewer](https://github.com/chirag9510/MMViewer) compiled executable is also available for download under Release section.
+
 ## Usage
 First, copy all the model files that need to be processed in the input folder present in the executable directory. \
 Then open **contents.txt** and write full filenames (eg. Duck.gltf) of all the models that need to be processed in a list format. \
