@@ -33,12 +33,12 @@ You can either launch the application with the default settings by directly clic
 MeshMasher.exe -wt 2 -ptv 1 -mo 1
 ```
 ## Ouput generated
-MeshMasher writes different types of data into different files with the intention of letting the geometry loader, that will map data into buffers, being able to do this with multiple threads asynchronously. \
-* **.ldr** = loader file containing info required for indirect drawing such as baseVertex, firstIndex, index count, baseInstance etc. \
-* **.vbf** = vertex buffer data file containing interleaved vertex data in position/texcoord/normals format. \
-* **.ebf** = elements buffer data file containing GL_UNSIGNED_INT format indices for GL_TRIANGLES draw. \
-* **.mtr** = material data file. \
-* **.txr** = texture data file containing names and characterstics of texture files and used for identification of data in .rgb file. \
+MeshMasher writes different types of data into different files with the intention of letting the geometry loader, that will map data into buffers, being able to do this with multiple threads asynchronously. 
+* **.ldr** = loader file containing info required for indirect drawing such as baseVertex, firstIndex, index count, baseInstance etc. 
+* **.vbf** = vertex buffer data file containing interleaved vertex data in position/texcoord/normals format. 
+* **.ebf** = elements buffer data file containing GL_UNSIGNED_INT format indices for GL_TRIANGLES draw. 
+* **.mtr** = material data file. 
+* **.txr** = texture data file containing names and characterstics of texture files and used for identification of data in .rgb file. 
 * **.rgb** = GL_RGB internal format data file containing raw image data used in conjunction with .txr file for identification. 
 
 These files can be found in the output folder present in the executable folder which can then be tested using the MMViewer application.
