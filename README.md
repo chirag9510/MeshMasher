@@ -15,7 +15,7 @@ Putting different types of data in different files allows for loading and mappin
 The efficiency of the various stages of the GPU pipeline that have to process vertex and index data when a GPU renders triangle meshes depends on the data you feed to them. This library provides algorithms to help optimize meshes for these stages and algorithms to reduce the mesh complexity and storage overhead. \
 Checkout the library for the full reference.
 
-* **Organize mesh data based on appropriate rendering order** 
+* **Organize mesh data based on appropriate rendering order** \
 Transparent material based meshes are written at the end so they can be drawn last as they should.
 
 ## Build
