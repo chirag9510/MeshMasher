@@ -38,6 +38,9 @@ You can either launch the application with the default settings by directly clic
 # default settings
 MeshMasher.exe -wt 2 -ptv 1 -mo 1
 ```
+
+MeshMasher takes full advantage of lock-free modern c++20 based multithreaded programming. Setting an appropriate number for the **-wt** flag of number of worker threads based on your processor can make a drastic difference in terms of how fast this application can process all the mesh data.
+
 ## Ouput generated
 MeshMasher writes different types of data into different files with the intention of letting the geometry loader, that will map data into buffers, being able to do this with multiple threads asynchronously. 
 * **.ldr** = loader file containing info required for indirect drawing such as baseVertex, firstIndex, index count, baseInstance etc. 
